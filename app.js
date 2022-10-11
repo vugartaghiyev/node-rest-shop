@@ -1,9 +1,14 @@
 import express from "express";
 import morgan from "morgan";
 import bodyParser from "body-parser";
+import mongoose from "mongoose";
 
 import productsRouter from "./api/routes/products.js";
 import ordersRouter from "./api/routes/orders.js";
+
+mongoose.connect(`mongodb+srv://vugartaghiyev:${process.env.MONGO_ATLAS_PW}@atlascluster.5yzvf26.mongodb.net/?retryWrites=true&w=majority`, {
+  useNewUrlParser: true
+})
 
 const app = express();
 
